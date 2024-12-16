@@ -1,53 +1,43 @@
-import Link from "next/link"
+import Image from "next/image";
+import React from "react";
+import Footer from "./Footer";
+import { IoMailOutline, IoCallOutline } from "react-icons/io5";
+import { FaInstagram, FaFacebook, FaYoutube, FaTwitter, } from "react-icons/fa6";
 
-export default function Header(){
-    return(
-        <>
-        <div className="flex w-[100%] h-[58px] border-black bg-[#252B42]  text-white space-x-40">
-            <div className="flex w-[421px] h-[46px] mt-[15px] space-x-7">
-                <div className="flex">
-            <img src="call.png" alt="" className="h-[16px] w-[16px] m-[5px]" />
-                <p>(225) 555-0118</p>
-                </div>
-                <div className="flex">
-                <img src="email.png" alt="" className="h-[16px] w-[16px] m-[5px]"/>
-                <p>michelle.rivera@example.com</p>
-                </div>
-            </div>
-            <div className="h-[44px] w-[343px] mt-[15px]">
-            <p className="TopHeaderText">Follow Us and get a chance to win 80% off  </p>
-            </div>
-            <div className="flex h-[46px] w-[233px] mt-[15px] ml-[150px]">
-            <p className="">Follow us: </p>
-            <img src="instagram.png" alt="" className="h-[26px] w-[26px]"/>
-            <img src="youtube.png" alt="" className="h-[26px] w-[26px]"/>
-            <img src="facebook.png" alt="" className="h-[26px] w-[26px]"/>
-            <img src="twitter.png" alt="" className="h-[26px] w-[26px]"/>
-            </div>
+
+export default function Navbar() {
+  return (
+    <div className="lg:block hidden w-full h-[58px] bg-[#252B42]">
+      <div className="flex justify-between items-center w-full h-full px-[24px]">
+        {/* Left section: Contact Info */}
+        <div className="flex gap-[10px]">
+          <button className="flex items-center gap-[5px] p-[10px] text-white">
+            <IoCallOutline width={16} height={16} /> 
+            <span className="font-Montserrat font-semibold text-[14px]"> (225) 555-0118</span>
+          </button>
+          <button className="flex items-center gap-[5px] p-[10px] text-white rounded-[5px]">
+            <IoMailOutline width={16} height={16} /> 
+            <span className="font-Montserrat text-[14px]">michelle.rivera@example.com</span>
+          </button>
         </div>
-        <div className="Header">
-            <div>
-                 <h1 className="text-2xl font-bold">Bandage</h1>
-            </div>
-            <div className="HeaderFunc">
-                <Link href={""}><p className="text">Home</p></Link>
-                <Link href={"/Shop"}> <p className="text">Shop</p> </Link>
-                <Link href={""}><p className="text">About</p></Link>
-                <Link href={"/"}><p className="text">Blog</p></Link>
-                <Link href={"/ContactUs"}><p className="text">Contact</p></Link>
-                <Link href={""}><p className="text">Pages</p></Link>
-            </div>
-            <div className="searching">
-                <div className=" flex mt-[10px]">
-                <img src="vector.png" alt="" className="h-[16px] w-[16px] m-[5px]" />
-                <p className="ml-5px"> Login / Register </p>
-                </div> 
-                <img src="search.png" alt="" className="h-[46px] w-[56px]"/>
-                <img src="heart.png" alt="heart" className="h-[46px] w-[56px]"/>
 
-                <img src="cart.png" alt="cart" className="h-[46px] w-[56px]"/>
-            </div>
-        </div>    
-        </>
-    )
+        {/* Center section: Follow Us */}
+        <h6 className="font-Montserrat font-semibold text-[14px] text-white">
+          Follow Us and get a chance to win 80% off
+        </h6>
+
+        {/* Right section: Social Icons */}
+        <div className="flex gap-[10px] items-center">
+          <h6 className="font-Montserrat text-[14px] text-white">Follow Us:</h6>
+          <div className="flex gap-[10px]">
+            <FaInstagram width={16} height={16} />
+            <FaYoutube width={16} height={16} />
+            <FaFacebook width={16} height={16} />
+            <FaTwitter width={16} height={16} /> 
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  );
 }
