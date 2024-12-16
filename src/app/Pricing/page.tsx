@@ -1,7 +1,7 @@
 "use client"
 import React, { useState } from 'react';
-import GreenHeader from '../component/GreenHeader';
-import Footer from "../Components/Footer"
+
+//import Footer from "../Components/Footer"
 import { FaInstagram, FaFacebook, FaYoutube, FaTwitter, FaLinkedin } from "react-icons/fa6";
 export default function Pricing() {
     const brands = [
@@ -19,7 +19,6 @@ export default function Pricing() {
 
   return (
     <>
-    <GreenHeader/>
     <div className="min-h-screen bg-gray-100 py-10 px-4">
       <div className="text-center">
         <h1 className="text-4xl font-bold mb-2">Simple Pricing</h1>
@@ -151,6 +150,6 @@ export default function Pricing() {
       </div>
       
     </div>
-   </>
+  </>
   );
 }
